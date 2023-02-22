@@ -1,12 +1,15 @@
 package AlgorithmAndDataStructures;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
+/**
+ * The ArrayUtils class provides utility methods for working with arrays
+ */
 public class ArrayUtils {
 
-    // Converting input string to integer array
+    /**
+     * Method to converting input string to integer array
+     * @param input String to be converted
+     * @return array of integer
+     */
     public static int[] convertInputToArray(String input) {
 
         String[] stringArray = input.split(" ");
@@ -17,27 +20,16 @@ public class ArrayUtils {
         return integerArray;
     }
 
-    // Swap array elements
-    public static void swap(int[] numbersArray, int index1, int index2) {
+    /**
+     * Method to swaps two elements in an array.
+     * @param arr Array to swap elements
+     * @param index1 Element in array
+     * @param index2 Element in array
+     */
+    public static void swap(int[] arr, int index1, int index2) {
 
-        int temp = numbersArray[index1];
-        numbersArray[index1] = numbersArray[index2];
-        numbersArray[index2] = temp;
-    }
-
-    // Checking for file existence
-    public static String readFileExceptions(String fileName) {
-        String inputString = " ";
-        try {
-            File file = new File(fileName);
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                inputString = scanner.nextLine();
-            }
-            scanner.close();
-            return inputString;
-        } catch (FileNotFoundException e) {
-            return inputString;
-        }
+        int temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = temp;
     }
 }
