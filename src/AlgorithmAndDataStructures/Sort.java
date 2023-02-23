@@ -1,4 +1,5 @@
 package AlgorithmAndDataStructures;
+
 import java.util.Arrays;
 
 /**
@@ -8,7 +9,6 @@ public class Sort {
 
     public static void main(String[] args) {
 
-        // File with 100_000 random numbers
         String inputString = FileExceptions.fileIsFound("/Users/arturchik/Desktop/Рандомні числа.txt");
 
         if(inputString == null) {
@@ -45,7 +45,7 @@ public class Sort {
         long endTime = System.currentTimeMillis();
 
         System.out.println("Час сортування Бульбашкою: " + (endTime - startTime) + " мс \n");
-//        System.out.println("Відсортований массив: \n" + Arrays.toString(intArray));
+        System.out.println("Відсортований массив: \n" + Arrays.toString(intArray));
     }
 
     /**
@@ -69,11 +69,11 @@ public class Sort {
         long endTime = System.currentTimeMillis();
 
         System.out.println("Час сортування Вибіркою: " + (endTime - startTime) + " мс \n");
-//        System.out.println("Відсортований массив: \n" + Arrays.toString(intArray));
+        System.out.println("Відсортований массив: \n" + Arrays.toString(intArray));
     }
 
     /**
-     * Sorts the array in ascending order using the quicksort algorithm.
+     * Sorts the array in ascending order using the quick sort algorithm.
      *
      * @param intArray the array to be sorted
      */
@@ -85,7 +85,7 @@ public class Sort {
         long endTime = System.currentTimeMillis();
 
         System.out.println("Час Швидкого сортування: " + (endTime - startTime) + " мс \n");
-//        System.out.println("Відсортований массив: \n" + Arrays.toString(intArray));
+        System.out.println("Відсортований массив: \n" + Arrays.toString(intArray));
     }
 
     private static void sortArray(int[] array, int left, int right) {
