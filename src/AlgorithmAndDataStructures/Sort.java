@@ -9,21 +9,28 @@ public class Sort {
 
     public static void main(String[] args) {
 
-        String inputString = FileExceptions.fileIsFound("/Users/arturchik/Desktop/Рандомні числа.txt");
+        // 100_000 random int numbers
+        Sort s = new Sort("/Users/arturchik/Desktop/Рандомні числа.txt");
+        selectionSort(s.arrayToSort);
+
+    }
+
+    public int[] arrayToSort;
+
+    public Sort(int[] arrayToSort) {
+        this.arrayToSort = arrayToSort;
+    }
+
+    public Sort(String fileName) {
+
+        String inputString = FileExceptions.fileIsFound(fileName);
 
         if(inputString == null) {
             System.out.println("Файл не знайдено.");
-            return;
+            System.exit(1);
         }
 
-        int[] arrayForQuick = ArrayUtils.convertInputToArray(inputString);
-        int[] arrayForBubble = ArrayUtils.convertInputToArray(inputString);
-        int[] arrayForSelection = ArrayUtils.convertInputToArray(inputString);
-
-        quickSort(arrayForQuick);
-        bubbleSort(arrayForBubble);
-        selectionSort(arrayForSelection);
-
+        arrayToSort = ArrayUtils.convertInputToArray(inputString);
     }
 
     /**
